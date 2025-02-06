@@ -1,0 +1,55 @@
+{
+  "name": "@nestjs-module-graph/test",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "name": "test",
+    "projectType": "application",
+    "sourceRoot": "apps/test/src",
+    "targets": {
+      "build": {
+        "executor": "nx:run-commands",
+        "options": {
+          "command": "webpack-cli build",
+          "args": [
+            "node-env=production"
+          ]
+        },
+        "configurations": {
+          "development": {
+            "args": [
+              "node-env=development"
+            ]
+          }
+        }
+      },
+      "serve": {
+        "executor": "@nx/js:node",
+        "defaultConfiguration": "development",
+        "dependsOn": [
+          "build"
+        ],
+        "options": {
+          "buildTarget": "test:build",
+          "runBuildTargetDependencies": false
+        },
+        "configurations": {
+          "development": {
+            "buildTarget": "test:build:development"
+          },
+          "production": {
+            "buildTarget": "test:build:production"
+          }
+        }
+      },
+      "test": {
+        "options": {
+          "passWithNoTests": true
+        }
+      }
+    },
+    "tags": [
+      "test"
+    ]
+  }
+}
