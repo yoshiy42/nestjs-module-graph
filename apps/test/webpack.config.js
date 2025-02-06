@@ -17,4 +17,9 @@ module.exports = {
       generatePackageJson: true,
     }),
   ],
+  resolve: {
+    alias: {
+      '@nestjs-module-graph/main': join(__dirname, '../../packages/main/src'),
+    }
+  }
 };
