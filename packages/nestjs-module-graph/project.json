@@ -1,0 +1,35 @@
+{
+  "name": "nestjs-module-graph",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/nestjs-module-graph/src",
+  "projectType": "library",
+  "tags": ["library"],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/nestjs-module-graph",
+        "tsConfig": "packages/nestjs-module-graph/tsconfig.lib.json",
+        "packageJson": "packages/nestjs-module-graph/package.json",
+        "main": "packages/nestjs-module-graph/src/index.ts",
+        "assets": [
+          "packages/nestjs-module-graph/*.md",
+          {
+            "input": "apps/frontend/dist",
+            "output": "assets",
+            "glob": "**/*"
+          }
+        ],
+        "updateBuildableProjectDepsInPackageJson": true
+      },
+      "dependsOn": [
+        {
+          "target": "build",
+          "projects": "frontend"
+        }
+      ]
+    },
+    "implicitDependencies": ["frontend"]
+  }
+}

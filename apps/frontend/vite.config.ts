@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   root: __dirname,
+  base: './',
   cacheDir: '../../node_modules/.vite/apps/frontend',
   server: {
     port: 4200,
@@ -25,6 +26,7 @@ export default defineConfig({
     commonjsOptions: {
       transformMixedEsModules: true,
     },
+    assetsDir: '',
   },
   test: {
     watch: false,

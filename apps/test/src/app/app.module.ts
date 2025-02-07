@@ -1,12 +1,21 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { sayHello } from '@nestjs-module-graph/main';
-
-sayHello();
+import { NestjsModuleGraphModule } from 'nestjs-module-graph';
+import { FooModule } from '../foo/foo.module';
+import { BarModule } from '../bar/bar.module';
 
 @Module({
-  imports: [],
+  imports: [
+    NestjsModuleGraphModule.register({
+      ignoreModulePatterns: [
+        /^Log*/,
+      ],
+      serveRoute: '/module-graph',
+    }),
+    FooModule,
+    BarModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

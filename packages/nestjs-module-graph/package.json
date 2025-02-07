@@ -1,5 +1,5 @@
 {
-  "name": "@nestjs-module-graph/main",
+  "name": "nestjs-module-graph",
   "version": "0.0.1",
   "type": "commonjs",
   "main": "./dist/index.js",
@@ -16,8 +16,5 @@
   "files": [
     "dist",
     "!**/*.tsbuildinfo"
-  ],
-  "dependencies": {
-    "tslib": "^2.3.0"
-  }
+  ]
 }

@@ -10,7 +10,7 @@ const swcJestConfig = JSON.parse(
 swcJestConfig.swcrc = false;
 
 export default {
-  displayName: '@nestjs-module-graph/main',
+  displayName: 'nestjs-module-graph',
   preset: '../../jest.preset.js',
   testEnvironment: 'node',
   transform: {

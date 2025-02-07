@@ -10,7 +10,7 @@
       "path": "./apps/test"
     },
     {
-      "path": "./packages/main"
+      "path": "./packages/nestjs-module-graph"
     },
     {
       "path": "./apps/frontend"

@@ -5,12 +5,11 @@
     "types": ["node"],
     "rootDir": "src",
     "tsBuildInfoFile": "out-tsc/test/tsconfig.app.tsbuildinfo",
-    "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "target": "es2021",
     "paths": {
-      "@nestjs-module-graph/main": ["../../packages/main/"]
-    },
+      "nestjs-module-graph": ["../../packages/nestjs-module-graph/"]
+    }
   },
   "include": ["src/**/*.ts"],
   "exclude": [
@@ -25,7 +24,7 @@
   ],
   "references": [
     {
-      "path": "../../packages/main/tsconfig.lib.json"
+      "path": "../../packages/nestjs-module-graph/tsconfig.lib.json"
     }
   ]
 }

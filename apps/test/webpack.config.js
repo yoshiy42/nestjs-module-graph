@@ -19,7 +19,7 @@ module.exports = {
   ],
   resolve: {
     alias: {
-      '@nestjs-module-graph/main': join(__dirname, '../../packages/main/src'),
+      'nestjs-module-graph': join(__dirname, '../../packages/nestjs-module-graph/src'),
     }
   }
 };
